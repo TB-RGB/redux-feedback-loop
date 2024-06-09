@@ -1,28 +1,46 @@
-import Header from "../Header/Header"
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
-import { useState } from "react"
-import { useDispatch } from "react-redux"
+import Header from "../Header/Header";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { TextField, Typography, IconButton } from "@mui/material";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-const Support = ()=>{
-    const history = useHistory()
-    const dispatch = useDispatch()
-    const [support, setSupport] = useState('')
+const Support = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const [support, setSupport] = useState("");
 
-    const handleNext = ()=>{
-        dispatch({type: 'ADD_SUPPORT', payload: support})
-        history.push('/comments')
-        setSupport('')
-    }
+  const handleNext = () => {
+    dispatch({ type: "ADD_SUPPORT", payload: support });
+    history.push("/comments");
+    setSupport("");
+  };
 
-    return(
-        <>
-        <Header />
-        <h1>Support</h1>
-        <h3>Support?</h3>
-        <input type="number" value={support} onChange={(event)=>setSupport(event.target.value)}/>
-        <button onClick={()=>handleNext()}>Next</button>
-        </>
-    )
-}
+  return (
+    <>
+      <Header />
 
-export default Support
+      <Typography variant="h4" sx={{ my: 10 }}>
+        How well are you being supported?
+      </Typography>
+      <TextField
+        label="Rate 1-5"
+        color="secondary"
+        value={support}
+        onChange={(event) => setSupport(event.target.value)}
+        focused
+        data-testid="input"
+      />
+      <IconButton
+        onClick={() => handleNext()}
+        color="secondary"
+        size="large"
+        data-testid="next"
+      >
+        <ArrowForwardIosIcon />
+      </IconButton>
+    </>
+  );
+};
+
+export default Support;

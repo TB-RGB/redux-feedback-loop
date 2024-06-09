@@ -67,19 +67,19 @@ describe('Feedback Loop', () => {
     //will cycle through the 6 views and check they are what we expect
     // based on finding 'correct' text on that view
     cy.contains(/feeling/i).should('exist');
-    cy.get('[data-testid="input"]').type('{selectall}5', {force: true})
+    cy.get('[data-testid="input"]').find('input').type('{selectall}5', {force: true})
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/understanding/i).should('exist');
-    cy.get('[data-testid="input"]').type('{selectall}4', {force: true})
+    cy.get('[data-testid="input"]').find('input').type('{selectall}4', {force: true})
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/support/i).should('exist');
-    cy.get('[data-testid="input"]').type('{selectall}2', {force: true})
+    cy.get('[data-testid="input"]').find('input').type('{selectall}2', {force: true})
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/comments/i).should('exist');
-    cy.get('[data-testid="input"]').type('{selectall}Taco Cat Goat Cheese Pizza', {force: true})
+    cy.get('[data-testid="input"]').find('input').type('{selectall}Taco Cat Goat Cheese Pizza', {force: true})
     cy.get('[data-testid="next"]').click();
 
 
@@ -100,19 +100,19 @@ describe('Feedback Loop', () => {
 
   it('POST: Adds feedback to Database', () => {
     cy.contains(/feeling/i).should('exist');
-    cy.get('[data-testid="input"]').type('{selectall}5', {force: true})
+    cy.get('[data-testid="input"]').find('input').type('{selectall}5', {force: true})
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/understanding/i).should('exist');
-    cy.get('[data-testid="input"]').type('{selectall}4', {force: true})
+    cy.get('[data-testid="input"]').find('input').type('{selectall}4', {force: true})
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/support/i).should('exist');
-    cy.get('[data-testid="input"]').type('{selectall}2', {force: true})
+    cy.get('[data-testid="input"]').find('input').type('{selectall}2', {force: true})
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/comments/i).should('exist');
-    cy.get('[data-testid="input"]').type('{selectall}Taco Cat Goat Cheese Pizza', {force: true})
+    cy.get('[data-testid="input"]').find('input').type('{selectall}Taco Cat Goat Cheese Pizza', {force: true})
     cy.get('[data-testid="next"]').click();
 
     cy.contains(/review/i).should('exist');

@@ -1,36 +1,117 @@
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
-import { useSelector } from "react-redux"
-import axios from "axios"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useSelector } from "react-redux";
+import axios from "axios";
+import {
+  AppBar,
+  Button,
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from "@mui/material";
 
-const Review = ()=>{
-    const history = useHistory()
-    const feelings = useSelector(store=>store.feedback.feeling)
-    const understanding = useSelector(store=>store.feedback.understanding)
-    const support = useSelector(store=>store.feedback.support)
-    const comments = useSelector(store=>store.feedback.comments)
-    const feedback = useSelector(store=>store.feedback)
+const Review = () => {
+  const history = useHistory();
+  const feelings = useSelector((store) => store.feedback.feeling);
+  const understanding = useSelector((store) => store.feedback.understanding);
+  const support = useSelector((store) => store.feedback.support);
+  const comments = useSelector((store) => store.feedback.comments);
+  const feedback = useSelector((store) => store.feedback);
 
-    const handleSubmit =()=>{
-        
-        axios.post('/api/feedback', feedback)
-            .then(response=>{
-                history.push('/feedback')
-            })
-            .catch(err=>{
-                console.error('Error in axios POST', err)
-            })
-    }
+  const handleSubmit = () => {
+    axios
+      .post("/api/feedback", feedback)
+      .then((response) => {
+        history.push("/feedback");
+      })
+      .catch((err) => {
+        console.error("Error in axios POST", err);
+      });
+  };
 
-    return(
-        <>
-        <h1>Review Your Feedback</h1>
-        <h4>Feelings: {feelings}</h4>
-        <h4>Understanding: {understanding}</h4>
-        <h4>Support: {support}</h4>
-        <h4>Comments: {comments}</h4>
-        <button onClick={()=>handleSubmit()}>Submit</button>
-        </>
-    )
-}
+  return (
+    <>
+      <AppBar position="static" sx={{ py: 7 }}>
+        <Typography variant="h4">Review Your Feedback</Typography>
+      </AppBar>
+      <Grid
+        container
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Grid item>
+          <List>
+            <ListItem>
+              <ListItemText
+                primary="Feelings"
+                secondary={feelings}
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  fontSize: "x-large",
+                }}
+                secondaryTypographyProps={{
+                  fontSize: "large",
+                  color: "secondary",
+                }}
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemText
+                primary="Understanding"
+                secondary={understanding}
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  fontSize: "x-large",
+                }}
+                secondaryTypographyProps={{
+                  fontSize: "large",
+                  color: "secondary",
+                }}
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemText
+                primary="Support"
+                secondary={support}
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  fontSize: "x-large",
+                }}
+                secondaryTypographyProps={{
+                  fontSize: "large",
+                  color: "secondary",
+                }}
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemText
+                primary="Comments"
+                secondary={comments}
+                primaryTypographyProps={{
+                  fontWeight: "bold",
+                  fontSize: "x-large",
+                }}
+                secondaryTypographyProps={{
+                  fontSize: "large",
+                  color: "secondary",
+                }}
+              />
+            </ListItem>
+          </List>
+        </Grid>
+      </Grid>
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={() => handleSubmit()}
+        data-testid="next"
+      >
+        Submit
+      </Button>
+    </>
+  );
+};
 
-export default Review
+export default Review;

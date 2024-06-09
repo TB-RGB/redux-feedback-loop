@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import "./App.css";
 import Feeling from "../Feeling/Feeling";
 import Understanding from "../Understanding/Understanding";
@@ -10,33 +9,40 @@ import Comments from "../Comments/Comments";
 import {
   HashRouter as Router,
   Route,
-  Link,
 } from "react-router-dom/cjs/react-router-dom.min";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "../Theme/AppTheme";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Route exact path="/">
-          <Feeling />
-        </Route>
-        <Route path="/understanding">
-          <Understanding />
-        </Route>
-        <Route path="/support">
-          <Support />
-        </Route>
-        <Route path="/comments">
-          <Comments />
-        </Route>
-        <Route path="/review">
-          <Review />
-        </Route>
-        <Route path="/feedback">
-          <Feedback />
-        </Route>
-      </Router>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Router>
+          <Route exact path="/">
+            <Feeling />
+          </Route>
+          <Route path="/understanding">
+            <Understanding />
+          </Route>
+          <Route path="/support">
+            <Support />
+          </Route>
+          <Route path="/comments">
+            <Comments />
+          </Route>
+          <Route path="/review">
+            <Review />
+          </Route>
+          <Route path="/feedback">
+            <Feedback />
+          </Route>
+        </Router>
+      </div>
+    </ThemeProvider>
   );
 }
 

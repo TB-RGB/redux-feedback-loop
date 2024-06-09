@@ -1,10 +1,12 @@
+import { AppBar, Typography } from "@mui/material"
+
 const Header = ()=>{
     return(
         <>
-        <header className="App-header">
-            <h1 className="App-title">Feedback!</h1>
-            <h3>Don't forget it!</h3>
-        </header>
+        <AppBar position="static" sx={{py:6}}>
+            <Typography variant="h2">Feedback!</Typography>
+            <Typography variant="h5">Don't forget it!</Typography>
+        </AppBar>
         </>
     )
 }
