@@ -4,8 +4,8 @@ const Header = ()=>{
     return(
         <>
         <AppBar position="static" sx={{py:6}}>
-            <Typography variant="h2">Feedback!</Typography>
-            <Typography variant="h5">Don't forget it!</Typography>
+            <Typography variant="h2" sx={{fontFamily: 'monospace'}}>Feedback!</Typography>
+            <Typography variant="h5" sx={{fontFamily: 'monospace'}}>Don't forget it!</Typography>
         </AppBar>
         </>
     )

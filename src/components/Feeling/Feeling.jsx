@@ -18,7 +18,7 @@ const Feeling = () => {
   return (
     <>
       <Header />
-      <Typography variant="h4" sx={{ my: 10 }}>
+      <Typography variant="h4" sx={{ my: 10, fontFamily: 'monospace' }}>
         How are you feeling today?
       </Typography>
 

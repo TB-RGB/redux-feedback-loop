@@ -20,7 +20,7 @@ const Understanding = () => {
     <>
       <Header />
 
-      <Typography variant="h4" sx={{ my: 10 }}>
+      <Typography variant="h4" sx={{ my: 10, fontFamily: 'monospace' }}>
         How well are you understanding the content?
       </Typography>
       <TextField

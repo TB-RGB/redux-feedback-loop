@@ -33,7 +33,7 @@ const Review = () => {
   return (
     <>
       <AppBar position="static" sx={{ py: 7 }}>
-        <Typography variant="h4">Review Your Feedback</Typography>
+        <Typography variant="h4" sx={{fontFamily: 'monospace'}}>Review Your Feedback</Typography>
       </AppBar>
       <Grid
         container
@@ -50,10 +50,12 @@ const Review = () => {
                 primaryTypographyProps={{
                   fontWeight: "bold",
                   fontSize: "x-large",
+                  fontFamily: 'monospace'
                 }}
                 secondaryTypographyProps={{
                   fontSize: "large",
                   color: "secondary",
+                  fontFamily: 'monospace'
                 }}
               />
             </ListItem>
@@ -64,10 +66,12 @@ const Review = () => {
                 primaryTypographyProps={{
                   fontWeight: "bold",
                   fontSize: "x-large",
+                  fontFamily: 'monospace'
                 }}
                 secondaryTypographyProps={{
                   fontSize: "large",
                   color: "secondary",
+                  fontFamily: 'monospace'
                 }}
               />
             </ListItem>
@@ -78,10 +82,12 @@ const Review = () => {
                 primaryTypographyProps={{
                   fontWeight: "bold",
                   fontSize: "x-large",
+                  fontFamily: 'monospace'
                 }}
                 secondaryTypographyProps={{
                   fontSize: "large",
                   color: "secondary",
+                  fontFamily: 'monospace'
                 }}
               />
             </ListItem>
@@ -92,10 +98,12 @@ const Review = () => {
                 primaryTypographyProps={{
                   fontWeight: "bold",
                   fontSize: "x-large",
+                  fontFamily: 'monospace'
                 }}
                 secondaryTypographyProps={{
                   fontSize: "large",
                   color: "secondary",
+                  fontFamily: 'monospace'
                 }}
               />
             </ListItem>
@@ -107,6 +115,7 @@ const Review = () => {
         color="secondary"
         onClick={() => handleSubmit()}
         data-testid="next"
+        sx={{fontFamily: 'monospace'}}
       >
         Submit
       </Button>

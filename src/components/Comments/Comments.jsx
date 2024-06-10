@@ -19,7 +19,7 @@ const Comments = () => {
     <>
       <Header />
 
-      <Typography variant="h4" sx={{ my: 10 }}>
+      <Typography variant="h4" sx={{ my: 10, fontFamily: 'monospace' }}>
         Any comments you want to leave?
       </Typography>
       <TextField
